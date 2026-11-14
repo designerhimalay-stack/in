@@ -4,6 +4,7 @@
 // 16px photos, 8px gaps).
 
 import { PRIMARY_CTA } from "@/brand/brand";
+import { localPhoto } from "@/brand/regions";
 import { Button } from "@/components/ui/Button";
 import { Photo } from "@/components/ui/Photo";
 import { PillTag } from "@/components/ui/PillTag";
@@ -107,7 +108,7 @@ export function Workshop() {
           itemAs="li"
           className={s.cards}
           itemClassName={s.li}
-          items={GAINS.map((g) => (
+          items={GAINS.map((g) => ({ ...g, ...localPhoto(g.src, g.alt, g.position) })).map((g) => (
               <div key={g.index} className={cn(s.card, "photo-host")}>
                 <Photo
                   src={g.src}

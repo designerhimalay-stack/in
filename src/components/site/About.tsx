@@ -8,6 +8,7 @@
 import { animate, motion, useInView, useScroll, useTransform, type MotionValue } from "@/lib/motion";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { BRAND, asset } from "@/brand/brand";
+import { localPhoto } from "@/brand/regions";
 import { Reveal } from "@/components/ui/Reveal";
 import { SpreadGrid } from "@/components/ui/SpreadGrid";
 import { RollingText } from "@/components/ui/RollingText";
@@ -19,6 +20,8 @@ import { ReadMore } from "@/components/ui/ReadMore";
 const HEADING = "Your team has already started. We take it to production.";
 const LEAD =
   "An AI pilot, a modernisation plan, a cloud migration: AptaCloud proves the value on your data with a proof of concept, then delivers in clear phases with senior Microsoft specialists, on the systems you already run.";
+
+const ABOUT_PHOTO = localPhoto("/images/photos/hero-developer-2.jpg", `A ${BRAND.name} engineer reviewing code across two monitors`);
 
 const STATS = [
   {
@@ -162,8 +165,9 @@ export function About() {
             <div className={s.photoInner}>
               <img
                 className={s.photo}
-                src={asset("/images/photos/hero-developer-2.jpg")}
-                alt={`A ${BRAND.name} engineer reviewing code across two monitors`}
+                src={asset(ABOUT_PHOTO.src)}
+                alt={ABOUT_PHOTO.alt}
+                style={ABOUT_PHOTO.position ? { objectPosition: ABOUT_PHOTO.position } : undefined}
                 loading="lazy"
                 decoding="async"
               />

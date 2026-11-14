@@ -5,6 +5,10 @@
 // HUD chips floating over it (site/hero/AgentConsole.tsx).
 
 import { BRAND, PRIMARY_CTA, asset } from "@/brand/brand";
+import { localPhoto } from "@/brand/regions";
+
+// Backdrop: dark, subject on the right so the copy sits on shadow. Regions swap in their own.
+const HERO_PHOTO = localPhoto("/images/photos/hero-developer.jpg", "", "68% 50%");
 import { Button } from "@/components/ui/Button";
 import { LineReveal, Reveal } from "@/components/ui/Reveal";
 import { Ticker } from "@/components/ui/Ticker";
@@ -40,11 +44,11 @@ export function Hero() {
 
       <Reveal trigger="mount" delay={0.2} duration={1.4} y={0} className={styles.backdrop}>
         <Photo
-          src="/images/photos/hero-developer.jpg"
+          src={HERO_PHOTO.src}
           alt=""
           sizes="(max-width: 809px) 180vh, 100vw"
           priority
-          position="68% 50%"
+          position={HERO_PHOTO.position}
           className={styles.bgPhoto}
         />
         <div className={styles.fade} aria-hidden="true" />

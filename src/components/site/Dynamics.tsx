@@ -10,6 +10,7 @@
 // a clean 2 × 3.
 
 import { BRAND, asset } from "@/brand/brand";
+import { localPhoto } from "@/brand/regions";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { SpreadGrid } from "@/components/ui/SpreadGrid";
@@ -20,7 +21,10 @@ import { StepCard } from "./dynamics/StepCard";
 const HEADING = "Connect finance, operations, and field teams on Dynamics 365.";
 const LEAD = `When HR, ERP, and CRM data sit in separate systems, every report is rebuilt by hand. ${BRAND.name}’s Dynamics 365 specialists configure, integrate, and migrate it around the way your business already works, in clear phases you can plan and budget for.`;
 /** Official Microsoft Dynamics 365 lockup (PDF: on the photo badge and the first card). */
-const D365_LOGO = { src: asset("/images/microsoft/dynamics-365.svg"), alt: "Microsoft Dynamics 365" };
+// Regions can swap in local photos (src/brand/regions.ts).
+const TEAM_PHOTO = localPhoto("/images/photos/d365-implementation.jpg", "A delivery team working together on laptops around a shared table");
+const ROOM_PHOTO = localPhoto("/images/photos/d365-optimization.jpg", "", "60% 72%");
+const D365_LOGO ={ src: asset("/images/microsoft/dynamics-365.svg"), alt: "Microsoft Dynamics 365" };
 
 const SUBHEADING = "Our comprehensive Microsoft Dynamics 365 consulting solutions";
 
@@ -96,10 +100,11 @@ export function Dynamics() {
               <div className={s.photoCard}>
                 <img
                   className={s.photo}
-                  src={asset("/images/photos/d365-implementation.jpg")}
-                  alt="A delivery team working together on laptops around a shared table"
+                  src={asset(TEAM_PHOTO.src)}
+                  alt={TEAM_PHOTO.alt}
                   loading="lazy"
                   decoding="async"
+                  style={TEAM_PHOTO.position ? { objectPosition: TEAM_PHOTO.position } : undefined}
                 />
                 <span className={s.logoBadge}>
                   <img src={D365_LOGO.src} alt={D365_LOGO.alt} width={1017} height={355} />
@@ -124,11 +129,11 @@ export function Dynamics() {
                 <div key="photo" className={s.photoCard} aria-hidden="true">
                   <img
                     className={s.photo}
-                    src={asset("/images/photos/d365-optimization.jpg")}
+                    src={asset(ROOM_PHOTO.src)}
                     alt=""
                     loading="lazy"
                     decoding="async"
-                    style={{ objectPosition: "60% 72%" }}
+                    style={{ objectPosition: ROOM_PHOTO.position }}
                   />
                 </div>,
               ]}

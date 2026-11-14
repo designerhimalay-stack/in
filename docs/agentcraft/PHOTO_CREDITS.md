@@ -109,3 +109,19 @@ marks belong to their owners and are shown monochrome to identify tools only.
 - in-delhi.jpg: India Gate, New Delhi, Pexels 31366998
 - uae-dubai.jpg: Dubai skyline, Pexels 33687795- in-gurugram.jpg: Gurugram office facade, Pexels 34725803
 - in-pune.jpg: Pune high-rises, WordPress Photo Directory (CC0), pd.w.org/2024/02/18465d1037c948a94
+
+## UAE photos (`public/images/photos/regions/uae/`, Pexels licence)
+- hero.jpg: Dubai Marina at night, Pexels 5448116
+- about.jpg: Pexels 7984733 · team.jpg: Pexels 8938630 · room.jpg: Pexels 7868964
+- workshop-analysis.jpg: Pexels 7869067 · workshop-hands-on.jpg: Pexels 8938271
+- abu-dhabi.jpg: Etihad Towers, Abu Dhabi, Pexels 19965889
+
+## India home photos (`public/images/photos/regions/in/`, Pexels licence)
+- hero.jpg: Mumbai skyline at night, Pexels 5414582 · about.jpg: Pexels 36706459
+- team.jpg: Pexels 4623089 · room.jpg: Pexels 7691708
+- workshop-analysis.jpg: Pexels 39204818 · workshop-hands-on.jpg: Pexels 4308094
+
+## US home photos (`public/images/photos/regions/us/`, Pexels licence)
+- hero.jpg: Dallas skyline at night, Pexels 4658019 · about.jpg: Pexels 7988080
+- team.jpg: Pexels 7793927 · room.jpg: Pexels 36733315
+- workshop-analysis.jpg: Pexels 8134067 · workshop-hands-on.jpg: Pexels 4339794
