@@ -12,6 +12,7 @@ import { INDUSTRY_PAGES } from "./industries";
 import { COMPANY_PAGES } from "./company";
 import { MS_EXTRAS } from "./microsoft-extras";
 import { CATEGORIES } from "./shared";
+import { REGIONAL_PAGES } from "./regional";
 import type { CategoryId, ServicePage } from "./types";
 
 export const SERVICE_PAGES: ServicePage[] = [...AI_PAGES, ...DATA_PAGES, ...APPMOD_PAGES, ...MS_PAGES, ...AZURE_PAGES, ...AWS_PAGES, ...INDUSTRY_PAGES, ...COMPANY_PAGES];
@@ -21,9 +22,17 @@ export const serviceHref = (slug: string) => asset(`/${slug}/`);
 
 export const pagesIn = (category: CategoryId) => SERVICE_PAGES.filter((p) => p.category === category);
 
+/** A shared page with this region's SEO, hero, and FAQ copy applied. */
+function regional(page: ServicePage): ServicePage {
+  const o = REGIONAL_PAGES[page.slug];
+  if (!o) return page;
+  return { ...page, seo: o.seo ?? page.seo, hero: { ...page.hero, ...o.hero }, faqs: o.faqs ?? page.faqs };
+}
+
 export function getService(slug: string) {
-  const page = SERVICE_PAGES.find((p) => p.slug === slug);
-  if (!page) throw new Error(`Unknown service page: ${slug}`);
+  const shared = SERVICE_PAGES.find((p) => p.slug === slug);
+  if (!shared) throw new Error(`Unknown service page: ${slug}`);
+  const page = regional(shared);
   const extras = EXTRAS[slug] ?? MS_EXTRAS[slug] ?? { sections: ["pains", "services", "process", "industries", "why"] };
   // Related: up to three pages from the same category, the ones that follow this page.
   // An industry hub lists every segment page of its vertical instead.
@@ -33,7 +42,9 @@ export function getService(slug: string) {
     ? pagesIn(page.relatedCategory)
     : [1, 2, 3].map((k) => group[(at + k) % group.length]).filter((p, i, a) => p.slug !== slug && a.indexOf(p) === i);
   const relatedIn = CATEGORIES[page.relatedCategory ?? page.category];
-  const layout = LAYOUTS[slug];
+  // A region's FAQs replace the layout's too (the page renders layout FAQs first).
+  const base = LAYOUTS[slug];
+  const layout = base && REGIONAL_PAGES[slug]?.faqs ? { ...base, faqs: REGIONAL_PAGES[slug].faqs } : base;
   return { page, extras, layout, stats: layout?.stats ?? DEFAULT_STATS, category: CATEGORIES[page.category], relatedIn, siblings };
 }
 
