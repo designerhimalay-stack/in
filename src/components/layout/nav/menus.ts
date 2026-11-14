@@ -71,6 +71,7 @@ export const MENUS: NavMenu[] = [
             svc("Data Engineering", "data-engineering"),
             svc("Data Warehousing", "data-warehousing"),
             svc("Data Visualisation", "data-visualization"),
+            ...local({ us: [], in: [svc("Microsoft Fabric", "microsoft-fabric")] }),
           ],
         },
         promo: {
@@ -114,6 +115,7 @@ export const MENUS: NavMenu[] = [
             svc("Microsoft Teams", "services/microsoft/teams"),
             svc("Microsoft Copilot", "services/microsoft/copilot-studio"),
             svc("Microsoft Dynamics 365", "services/microsoft/microsoft-dynamics-365"),
+            ...local({ us: [], in: [svc("Dynamics 365 Business Central", "microsoft-dynamics-business-central")] }),
             svc("Microsoft Power BI", "services/microsoft/power-bi"),
             svc("Power Platform", "services/microsoft/power-platform"),
             svc("Microsoft SharePoint", "services/microsoft/sharepoint"),
@@ -143,6 +145,7 @@ export const MENUS: NavMenu[] = [
             svc("Azure Optimisation", "azure-optimization"),
             svc("Azure Managed Services", "azure-managed-services"),
             svc("Azure Security", "azure-security"),
+            ...local({ us: [], in: [svc("Azure DevOps", "azure-devops")] }),
           ],
         },
         promo: {
@@ -217,6 +220,17 @@ export const MENUS: NavMenu[] = [
           svc("Field Services", "industry/engineering-and-construction/field-services"),
         ],
       },
+      // India's live site also serves these sectors.
+      ...local({
+        us: [],
+        in: [
+          {
+            title: "More industries",
+            text: "Cloud, data, and AI for healthcare, financial services, and manufacturing.",
+            links: [svc("Healthcare", "healthcare"), svc("Banking & Financial Services", "banking-financial-services"), svc("Manufacturing", "manufacturing")],
+          },
+        ],
+      }),
     ],
   },
   {

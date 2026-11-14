@@ -17,7 +17,8 @@ mkdirSync(out, { recursive: true });
 
 const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe" });
 const page = await (await browser.newContext({ viewport: { width, height: width < 600 ? 844 : 900 }, reducedMotion: "reduce" })).newPage();
-await page.goto(`http://localhost:4321${REGION_BASE.replace(/\/$/, "")}/`, { waitUntil: "networkidle" });
+// PAGE=/healthcare/ to sheet another page than the home page.
+await page.goto(`http://localhost:4321${REGION_BASE.replace(/\/$/, "")}${process.env.PAGE ?? "/"}`, { waitUntil: "networkidle" });
 // Hide the fixed nav and dev toolbar so they don't cover section shots.
 await page.addStyleTag({ content: "astro-dev-toolbar,.skip-link{display:none!important} header,nav{visibility:hidden!important}" });
 const shots = [];

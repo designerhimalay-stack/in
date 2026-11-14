@@ -126,3 +126,8 @@ marks belong to their owners and are shown monochrome to identify tools only.
 - team.jpg: Pexels 7793927 Â· room.jpg: Pexels 36733315
 - workshop-analysis.jpg: Pexels 8134067 Â· workshop-hands-on.jpg: Pexels 4339794
 - in/audience.jpg: Pexels 35184837
+
+## India-only page photos (`public/images/photos/regions/in/pages/`, Pexels licence)
+- devops-hero 7988742 · devops-banner 7988116 · bc-hero 4484150 · bc-banner 4484047 · fabric-hero 5831259
+- health-hero 4266943 · health-banner 19957221 · bank-hero 7567556 · bank-banner 38246349 · mfg-hero 31336010 · mfg-banner 32399719
+- India blog images: from aptacloud.com/in/blogs (client's own); three posts without an image reuse the closest topic image.
