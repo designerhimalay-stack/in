@@ -189,6 +189,9 @@ export const REGION = REGIONS[id];
 /** The production-preview origin all four sites share (GitHub Pages user site). */
 export const SITE_ORIGIN = "https://designerhimalay-stack.github.io";
 
+/** Region-specific content (regulators, laws): this region's value, else the US one. */
+export const local = <T,>(v: { us: T } & Partial<Record<RegionId, T>>): T => v[REGION.id] ?? v.us;
+
 /** The region's own photo for a shared slot, or the shared photo when it has none. */
 export const localPhoto = (src: string, alt: string, position?: string): LocalPhoto =>
   REGION.photos?.[src] ?? { src, alt, position };

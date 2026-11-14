@@ -21,7 +21,9 @@ await page.goto(`http://localhost:4321${REGION_BASE.replace(/\/$/, "")}/`, { wai
 // Hide the fixed nav and dev toolbar so they don't cover section shots.
 await page.addStyleTag({ content: "astro-dev-toolbar,.skip-link{display:none!important} header,nav{visibility:hidden!important}" });
 const shots = [];
-for (const sel of ["#top", "#about", "#workshop", "#dynamics", "#global-presence, #india, #uae"]) {
+// Every top-level section of <main>, in page order (or a selector list after the width).
+const sels = process.argv[4] ? process.argv[4].split(",") : await page.$$eval("main > section, main > * > section", (els) => [...new Set(els)].map((e, i) => (e.id ? `#${e.id}` : `main section >> nth=${i}`)));
+for (const sel of sels) {
   const el = page.locator(sel).first();
   if (!(await el.count())) continue;
   await el.scrollIntoViewIfNeeded();

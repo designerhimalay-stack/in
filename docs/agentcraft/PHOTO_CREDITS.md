@@ -125,3 +125,4 @@ marks belong to their owners and are shown monochrome to identify tools only.
 - hero.jpg: Dallas skyline at night, Pexels 4658019 · about.jpg: Pexels 7988080
 - team.jpg: Pexels 7793927 · room.jpg: Pexels 36733315
 - workshop-analysis.jpg: Pexels 8134067 · workshop-hands-on.jpg: Pexels 4339794
+- in/audience.jpg: Pexels 35184837
