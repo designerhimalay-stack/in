@@ -5,6 +5,7 @@
 //   promo  — a highlighted card: logo, eyebrow, title, copy and a CTA
 
 import { BRAND, asset, home } from "@/brand/brand";
+import { local } from "@/brand/regions";
 
 /** Link to a service page on this site (slugs keep the live site's US spelling).
  *  Labels mirror src/data/services; kept here so the nav island stays light. */
@@ -57,7 +58,7 @@ export const MENUS: NavMenu[] = [
           eyebrow: "Flagship Programme",
           title: "AI Assessment Workshop",
           text: "A tailored workshop that shows where AI can automate your operations and what it should return.",
-          cta: { label: "See what the workshop covers", href: home("#workshop") },
+          cta: local({ us: { label: "See what the workshop covers", href: home("#workshop") }, in: { label: "See how we work", href: home("#process") } }),
         },
       },
       {
@@ -150,7 +151,7 @@ export const MENUS: NavMenu[] = [
           eyebrow: "Cloud Excellence",
           title: "Cloud That Costs What It Should",
           text: "Run more on Azure for less, with costs you can explain to finance.",
-          cta: { label: "Get your cloud cost review", href: home("#azure") },
+          cta: { label: "Get your cloud cost review", href: local({ us: home("#azure"), in: asset("/azure-optimization/") }) },
         },
       },
       {
