@@ -124,7 +124,7 @@ export const REGIONS: Record<RegionId, RegionConfig> = {
     badges: [],
     areaServed: ["India"],
     photos: {
-      "/images/photos/hero-developer.jpg": { src: "/images/photos/regions/in/hero.jpg", alt: "", position: "60% 55%" },
+      "/images/photos/hero-developer.jpg": { src: "/images/photos/regions/in/hero.jpg", alt: "", position: "62% 55%" },
       "/images/photos/hero-developer-2.jpg": { src: "/images/photos/regions/in/about.jpg", alt: "An AptaCloud engineer working across two monitors", position: "40% 45%" },
       "/images/photos/d365-implementation.jpg": { src: "/images/photos/regions/in/team.jpg", alt: "Colleagues gathered round a laptop, planning the next step together", position: "72% 45%" },
       "/images/photos/d365-optimization.jpg": { src: "/images/photos/regions/in/room.jpg", alt: "", position: "45% 50%" },

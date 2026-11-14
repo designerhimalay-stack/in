@@ -18,7 +18,6 @@ import { REGION, local } from "../brand/regions";
 import { Cards } from "../components/service/blocks/Cards";
 import { Cases } from "../components/service/blocks/Cases";
 import { Split } from "../components/service/blocks/Split";
-import { Steps } from "../components/service/blocks/Steps";
 import { Faq } from "../components/service/Faq";
 import { IN_AUDIENCE, IN_ENGAGEMENTS, IN_FAQS, IN_PROCESS, IN_SOLUTIONS, IN_WHY } from "../data/home";
 import { Hero } from "../components/site/Hero";
@@ -57,7 +56,7 @@ const india = REGION.id === "in";
         <Cards client:visible block={IN_WHY} tone="tint" />
         <Dynamics client:visible />
         <Microsoft client:visible />
-        <Steps client:visible block={IN_PROCESS} tone="tint" />
+        <Cards client:visible block={IN_PROCESS} tone="tint" />
         <Cases client:visible block={IN_ENGAGEMENTS} tone="white" />
         <Split client:visible block={IN_AUDIENCE} tone="dark" />
         <Faq client:visible faqs={IN_FAQS} name="AptaCloud India" tone="tint" />

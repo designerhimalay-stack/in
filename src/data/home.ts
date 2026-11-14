@@ -91,22 +91,23 @@ export const IN_WHY: Block = {
   ],
 };
 
+// Icon cards (not a cycle diagram); the step label is the one place numbers belong.
 export const IN_PROCESS: Block = {
-  kind: "steps",
+  kind: "cards",
   id: "process",
-  variant: "cycle",
-  centre: "AptaCloud",
+  style: "icon",
   tone: "tint",
   tag: "How we work",
   icon: "flow",
   heading: "How AptaCloud works.",
-  lead: "Five steps that start with your goals and keep improving after go-live.",
-  steps: [
-    { title: "Understand your goals", text: "We map your business complexity, workloads, skill gaps, and what is holding growth back." },
-    { title: "Design a practical roadmap", text: "A phased plan and integration model that fits the systems you already run." },
-    { title: "Implement a tailored solution", text: "We install, test, and train your staff, with security measures in place from day one." },
-    { title: "Support you to scale", text: "Backup, disaster recovery, and expert help keep the business running as it grows." },
-    { title: "Track and optimise", text: "We monitor performance and adjust resources, so productivity rises and monthly bills come down." },
+  lead: "Five steps, from your goals to ongoing optimisation.",
+  cols: 5,
+  items: [
+    { kicker: "Step 1", title: "Understand your goals", text: "Workloads, skill gaps, and what is holding growth back.", icon: "target" },
+    { kicker: "Step 2", title: "Plan the roadmap", text: "A phased plan that fits the systems you already run.", icon: "flow" },
+    { kicker: "Step 3", title: "Implement", text: "Install, test, and train your staff, secure from day one.", icon: "cog" },
+    { kicker: "Step 4", title: "Support you to scale", text: "Backup, disaster recovery, and expert help as you grow.", icon: "shield" },
+    { kicker: "Step 5", title: "Track and optimise", text: "Performance tuned and resources adjusted to cut monthly bills.", icon: "gauge" },
   ],
 };
 
