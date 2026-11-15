@@ -1,0 +1,1 @@
+import{i as e}from"./brand.CRyZ309C.js";var t=t=>e(`/${t}/`);export{t};
