@@ -41,8 +41,8 @@ row("A10", 'Stats strip "Microsoft-certified", no "Microsoft-first"', none(/Micr
 only(["au", "in"], "A11", 'Home platform strip "Built on the Microsoft stack"', () => text(page("/")).includes("Built on the Microsoft stack"));
 only(["us", "au"], "A12", "AI Consulting FAQ wording (India runs its own FAQ)", () => text(page("/ai-consulting/")).includes("We build first on Azure OpenAI Service, Microsoft Copilot Studio, and Azure Machine Learning"));
 only(["us", "au"], "A13", "Generative AI FAQ wording (India runs its own FAQ)", () => text(page("/generative-ai/")).includes("We start with Azure OpenAI Service, and choose other models"));
-row("A14", "Data Engineering FAQ: Fabric", text(page("/data-engineering/")).includes("Yes. We build many data platforms on Microsoft Fabric"));
-row("A15", "Data Engineering FAQ: Azure and AWS", text(page("/data-engineering/")).includes("We migrate data platforms to Azure and AWS"));
+only(["us", "au", "in"], "A14", "Data Engineering FAQ: Fabric (the UAE runs its own FAQ)", () => text(page("/data-engineering/")).includes("Yes. We build many data platforms on Microsoft Fabric"));
+only(["us", "au", "in"], "A15", "Data Engineering FAQ: Azure and AWS (the UAE runs its own FAQ)", () => text(page("/data-engineering/")).includes("We migrate data platforms to Azure and AWS"));
 row("A16", "Data banners", ["/data-engineering/", "/data-warehousing/", "/data-visualization/"].every((p) => text(page(p)).includes("Build the data foundation your AI work runs on.")) && none(/future-proof your data strategy/i));
 row("A17", "AI Agents closing banner", text(page("/ai-agents/")).includes("Put your first AI agent into production."));
 row("A18", 'Application Re-engineering "Systems ready for AI"', text(page("/application-re-engineering/")).includes("Systems ready for AI"));
@@ -83,6 +83,7 @@ only(["in"], "IN6", "US segment pages noindex and out of the sitemap", () => {
 const VP = {
   us: "AptaCloud helps insurers quote sooner and field crews stop waiting on the office, with AI that runs on systems we've modernized to support it.",
   au: "AptaCloud helps Australian insurers quote sooner and site crews stop waiting on the office, with AI that runs on systems we've modernised to support it.",
+  uae: "AptaCloud helps UAE businesses cut manual work and get AI working in daily operations, on systems we've modernised to support it.",
   in: "AptaCloud helps Indian manufacturers and industrial firms cut manual reporting and get AI working in daily operations, on systems we've modernised to support it.",
 };
 if (VP[REGION]) row("VP1-3", "Value line (footer)", has(VP[REGION]));
